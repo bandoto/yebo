@@ -23,6 +23,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 body,input,button,textarea{
 	font-family: "Lato";
 }
+
 /*WRAPPER===========================================================================================*/
 
 .wrapper{
@@ -36,6 +37,7 @@ body,input,button,textarea{
 	max-width: 1130px;
 	padding: 0px 15px;
 	margin: 0 auto;
+
 }
 
 /*===========================================================================================*/
@@ -48,17 +50,44 @@ body,input,button,textarea{
 	display: flex;
 	flex-direction: column;
 }
+
 .main-screen {
 	flex: 1 0 100%;
 	&__bg {
-		background: url('../img/logo.png') center / cover no-repeat;
 		position: absolute;
 		width: 100%;
 		height: 100%;
 		top: 0;
 		left: 0;
 	}
+	// .main-screen__arrow
+	&__arrow {	
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		
+		padding-bottom: 20px;
+		animation: arrow 1.5s infinite linear;
+		img{
+			width: 40px;
+			height: 40px;
+			background-color: rgb(192,192,192, 0.7);
+			border-radius: 40%;	
+		}
+	}
 }
+
+@keyframes arrow{
+	0%{top: 0;}
+	50%{top: -20px;}
+	100%{top: 0;}
+}
+
 .content {
 }
 
@@ -547,7 +576,11 @@ body,input,button,textarea{
 			width: 100%;
 			border: 1px solid #d3d7d9;
 			background-color: #ffffff;
-			
+			font-size: 20px;
+			color: #929292;
+			line-height: 24px;
+			font-style: italic;
+			padding-left: 28px;
 		}
 	}
 	// .mailing__button

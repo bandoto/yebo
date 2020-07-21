@@ -25,3 +25,11 @@ function ibg() {
 }
 
 ibg();
+
+var $page = $('html, body');
+$('a[href*="#content"]').click(function() {
+    $page.animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+    }, 400);
+    return false;
+});
