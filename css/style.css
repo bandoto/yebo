@@ -180,6 +180,10 @@ textarea {
   font-family: "Lato";
 }
 
+body.lock {
+  overflow: hidden;
+}
+
 /*WRAPPER===========================================================================================*/
 
 .wrapper {
@@ -286,11 +290,21 @@ textarea {
 /*===========================================================================================*/
 
 .header {
-  position: relative;
+  position: fixed;
   left: 0;
   width: 100%;
   z-index: 50;
   top: 35px;
+  padding: 8px 0;
+}
+
+.header__active {
+  background-color: #F3F4FA;
+  opacity: 0.9;
+  top: 0;
+  -webkit-transition: all 0.9s ease 0s;
+  -o-transition: all 0.9s ease 0s;
+  transition: all 0.9s ease 0s;
 }
 
 .header:before {
@@ -864,7 +878,11 @@ textarea {
 
 @media (max-width: 767px) {
   .header {
-    top: 15px;
+    top: 10px;
+  }
+
+  .header__active {
+    top: 0;
   }
 
   .header__row {
@@ -933,7 +951,7 @@ textarea {
 
   .menu__body.active {
     top: 0;
-    z-index: 5;
+    z-index: 2;
   }
 
   .menu__list {
